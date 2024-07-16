@@ -84,3 +84,17 @@
       }
     };
   
+
+  //generate random valid Aadhaar number
+  function generateAadhaar(){
+    //randomly generated 11 digit number array
+    let rand_array = [];
+    for(let i = 0; i < 11; i++){
+      rand_array[i] = Math.trunc(Math.random() * 10);
+    }
+    let generated_checksum = generate_checksum(rand_array);
+    rand_array = rand_array.reverse();
+    rand_array[11] = generated_checksum;
+    result_array = rand_array.join("");
+    return result_array;
+  }
