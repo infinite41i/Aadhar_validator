@@ -98,3 +98,22 @@
     result_array = rand_array.join("");
     return result_array;
   }
+
+  
+
+  //command-line arguments
+  if(process.argv[2] === '-v'){
+    let given_aadhaar = process.argv[3];
+    let validation_result = validateAadhaar(given_aadhaar);
+    console.log(validation_result);
+  }
+  
+  else if(process.argv[2] === '-g'){
+    let generated_Aadhaar = generateAadhaar();
+    console.log(generated_Aadhaar);
+    console.log("validation result: ");
+    let validation_result = validateAadhaar(generated_Aadhaar);
+    console.log(validation_result);
+  }
+  
+  
